@@ -1,0 +1,4 @@
+__pycache__/
+cogs/__pycache__/
+data/env.json
+data/sheet_secret.json
