@@ -1,0 +1,79 @@
+{
+    "cancelStart" : {
+        "german": "Iteriere über alle Server <a:error:1216302991045427251>",
+        "english": "Iterating over all servers <a:error:1216302991045427251>",
+        "french": "Itération sur tous les serveurs <a:error:1216302991045427251>",
+        "spanish": "Iterando sobre todos los servidores <a:error:1216302991045427251>",
+        "russian": "Итерация по всем серверам <a:error:1216302991045427251>"
+    },
+    "cancelSuccessful" : {
+        "german": "Alle deine neuesten Beiträge, die in den letzten 25 Nachrichten gefunden wurden, wurden gelöscht <a:verifyblack:1216302923441504287>",
+        "english": "Deleted all your latest posts found in last 25 messages <a:verifyblack:1216302923441504287>",
+        "french": "Tous vos derniers messages trouvés dans les 25 derniers messages ont été supprimés <a:verifyblack:1216302923441504287>",
+        "spanish": "Se eliminaron todos tus últimos mensajes encontrados en los últimos 25 mensajes <a:verifyblack:1216302923441504287>",
+        "russian": "Удалены все ваши последние сообщения, найденные в последних 25 сообщениях <a:verifyblack:1216302923441504287>"
+    },
+    "noProfileFound" : {
+        "german": "Kein Profil gefunden für ID: {bs_id}",
+        "english": "No profile found for ID: {bs_id}",
+        "french": "Aucun profil trouvé pour l'ID : {bs_id}",
+        "spanish": "No se encontró ningún perfil para el ID: {bs_id}",
+        "russian": "Профиль не найден по ID: {bs_id}"
+    },
+    "sendingPosts" : {
+        "english": "Sending search post on all servers <a:error:1216302991045427251>",
+        "german": "Sende Suchbeitrag auf allen Servern <a:error:1216302991045427251>",
+        "french": "Envoi du message de recherche sur tous les serveurs <a:error:1216302991045427251>",
+        "spanish": "Enviando publicación de búsqueda en todos los servidores <a:error:1216302991045427251>",
+        "russian": "Отправка сообщения о поиске на всех серверах <a:error:1216302991045427251>"
+    },
+    "sendingPostsProgress" : {
+        "english": "Sending search post on all servers {count}",
+        "german": "Sende Suchbeitrag auf allen Servern {count}.",
+        "french": "Envoi du message de recherche sur tous les serveurs {count}",
+        "spanish": "Enviando publicación de búsqueda en todos los servidores {count}",
+        "russian": "Отправка сообщения о поиске на всех серверах {count}."
+    },
+    "postSent" : {
+        "english": "Search post sent successfully on all servers <a:verifyblack:1216302923441504287>",
+        "german": "Suchbeitrag erfolgreich auf allen Servern gesendet <a:verifyblack:1216302923441504287>",
+        "french": "Message de recherche envoyé avec succès sur tous les serveurs <a:verifyblack:1216302923441504287>",
+        "spanish": "Publicación de búsqueda enviada correctamente en todos los servidores <a:verifyblack:1216302923441504287>",
+        "russian": "Сообщение о поиске успешно отправлено на всех серверах <a:verifyblack:1216302923441504287>"
+    },
+    "unknownPosition" : {
+        "english": "Unknown position: {pos}",
+        "german": "Unbekannte Position: {pos}",
+        "french": "Position inconnue : {pos}",
+        "spanish": "Posición desconocida: {pos}",
+        "russian": "Неизвестная позиция: {pos}"
+    },
+    "newEsportInquiry" : {
+        "english": "New Esport Inquiry",
+        "german": "Neue Esport-Anfrage",
+        "french": "Nouvelle demande d'esport",
+        "spanish": "Nueva consulta de esport",
+        "russian": "Новый запрос о киберспорте"
+    },
+    "newInquiry" : {
+        "english": "New Inquiry",
+        "german": "Neue Anfrage",
+        "french": "Nouvelle demande",
+        "spanish": "Nueva consulta",
+        "russian": "Новый запрос"
+    },
+    "sentFrom" : {
+        "english": "sent from: {guild}",
+        "german": "gesendet von: {guild}",
+        "french": "envoyé depuis: {guild}",
+        "spanish": "enviado desde: {guild}",
+        "russian": "отправлено из: {guild}"
+    },
+    "joinTeam" : {
+        "english": "Join Team",
+        "german": "Team beitreten",
+        "french": "Rejoindre l'équipe",
+        "spanish": "Unirse al equipo",
+        "russian": "Присоединиться к команде"
+    }  
+}

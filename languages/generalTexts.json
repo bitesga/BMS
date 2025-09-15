@@ -1,0 +1,213 @@
+{
+    "findTeamsAnnouncement" : {
+        "title" : {
+            "english" : "<a:Announcement:1216306085565042710> Welcome to the BMS",
+            "german" : "<a:Announcement:1216306085565042710> Willkommen bei BMS",
+            "french" : "<a:Announcement:1216306085565042710> Bienvenue sur le BMS",
+            "spanish" : "<a:Announcement:1216306085565042710> Bienvenido a BMS",
+            "russian" : "<a:Announcement:1216306085565042710> Добро пожаловать в BMS"
+        },
+        "content" : {
+            "english": [
+                "<:right_arrow:1216305900961271859> Use the command `/find_mates` to create a request if you are looking for ladder/ranked players\n",
+                "<:right_arrow:1216305900961271859> Use the command `/find_esport` to create a request if you are looking for a Competitive Team or Team Member\n\n",
+                "<:info:1216306156222287894> You can use the command `/cancel_search` to delete your request"
+            ],
+            "german": [
+                "<:right_arrow:1216305900961271859> Verwende den Befehl `/find_mates`, um eine Anfrage zu erstellen, wenn du nach Leitern-/Rangspielern suchst\n",
+                "<:right_arrow:1216305900961271859> Verwende den Befehl `/find_esport`, um eine Anfrage zu erstellen, wenn du nach einem Wettkampfteam oder Teammitglied suchst\n\n",
+                "<:info:1216306156222287894> Du kannst den Befehl `/cancel_search` verwenden, um deine Anfrage zu löschen"
+            ],
+            "french": [
+                "<:right_arrow:1216305900961271859> Utilisez la commande `/find_mates` pour créer une demande si vous recherchez des joueurs en échelle/rangés\n",
+                "<:right_arrow:1216305900961271859> Utilisez la commande `/find_esport` pour créer une demande si vous recherchez une équipe compétitive ou un membre d'équipe\n\n",
+                "<:info:1216306156222287894> Vous pouvez utiliser la commande `/cancel_search` pour supprimer votre demande"
+            ],
+            "spanish": [
+                "<:right_arrow:1216305900961271859> Usa el comando `/find_mates` para crear una solicitud si estás buscando jugadores de escalera/clasificados\n",
+                "<:right_arrow:1216305900961271859> Usa el comando `/find_esport` para crear una solicitud si estás buscando un equipo competitivo o un miembro de equipo\n\n",
+                "<:info:1216306156222287894> Puedes usar el comando `/cancel_search` para eliminar tu solicitud"
+            ],
+            "russian" : [
+                "<:right_arrow:1216305900961271859> Используйте команду `/find_mates`, чтобы создать запрос, если вы ищете игроков по лестнице/ранжированных\n",
+                "<:right_arrow:1216305900961271859> Используйте команду `/find_esport`, чтобы создать запрос, если вы ищете конкурентную команду или члена команды\n\n",
+                "<:info:1216306156222287894> Вы можете использовать команду `/cancel_search`, чтобы удалить свой запрос"
+            ]
+        }
+           
+    },
+    "welcome" : {
+        "title" : {
+            "english": "<:Hi:1216304655861284974> I am the **Brawl Mates System!**",
+            "german": "<:Hi:1216304655861284974> Ich bin das **Brawl Mates System!**",
+            "french": "<:Hi:1216304655861284974> Je suis le **Système Brawl Mates!**",
+            "spanish": "<:Hi:1216304655861284974> ¡Soy el Sistema de Compañeros de Brawl!",
+            "russian": "<:Hi:1216304655861284974> Я Система Brawl Mates!"
+        },
+        "content" : {
+            "english": [
+                "I'm glad you've decided to use my service!\n",
+                "I have already freed up your work and created all the channels for you and activated the system directly\n",
+                "If you still need help, please use the `/help` command\n\n",
+                "To support me, check out our Social Media in the Linktree <:Linktree:1218980236260278292>\n\n",
+                "<:thx:1216304741949374504> for your support! You are the best"
+            ],
+            "german": [
+                "Ich freue mich, dass du dich entschieden hast, meinen Service zu nutzen!\n",
+                "Ich habe bereits deine Arbeit erleichtert und alle Kanäle für dich erstellt und das System direkt aktiviert\n",
+                "Wenn du noch Hilfe benötigst, benutze bitte den Befehl `/help`\n\n",
+                "Um mich zu unterstützen, schau dir unsere Social Media in der Linktree <:Linktree:1218980236260278292>\n\n",
+                "<:thx:1216304741949374504> für deine Unterstützung! Du bist der Beste"
+            ],
+            "french": [
+                "Je suis ravi que vous ayez décidé d'utiliser mon service!\nJ'ai déjà libéré votre travail et créé tous les canaux pour vous et activé le système directement\n",
+                "Si vous avez encore besoin d'aide, veuillez utiliser la commande `/help`\n\n",
+                "Pour me soutenir, consultez nos réseaux sociaux dans le Linktree <:Linktree:1218980236260278292>\n\n",
+                "<:thx:1216304741949374504> pour votre soutien! Vous êtes le meilleur"
+            ],
+            "spanish": [
+                "¡Me alegra que hayas decidido usar mi servicio!\n",
+                "Ya he liberado tu trabajo y creado todos los canales para ti y activado el sistema directamente\n",
+                "Si aún necesitas ayuda, por favor usa el comando /help\n\n",
+                "Para apoyarme, revisa nuestras redes sociales en el Linktree <:Linktree:1218980236260278292>\n\n",
+                "<:thx:1216304741949374504> ¡Gracias por tu apoyo! ¡Eres el mejor"
+            ],
+            "russian": [
+                "Я рад, что вы решили воспользоваться моим сервисом!\n",
+                "Я уже освободил вашу работу, создал все каналы для вас и активировал систему непосредственно\n",
+                "Если вам все еще нужна помощь, пожалуйста, используйте команду /help\n\n",
+                "Чтобы поддержать меня, ознакомьтесь с нашими социальными сетями в Linktree <:Linktree:1218980236260278292>\n\n",
+                "<:thx:1216304741949374504> за вашу поддержку! Вы лучшие"
+            ]
+        }
+    },
+    "upcomingSoon" : {
+        "english" : "<:info:1216306156222287894> Predicted upcoming maps will be here soon!",
+        "spanish": "<:info:1216306156222287894> ¡Los próximos mapas previstos estarán aquí pronto!",
+        "russian": "<:info:1216306156222287894> Предполагаемые следующие карты скоро будут здесь!",
+        "german": "<:info:1216306156222287894> Die voraussichtlichen kommenden Karten werden bald hier sein!",
+        "french": "<:info:1216306156222287894> Les prochains maps prévues seront bientôt ici!"
+    },
+    "currentSoon" : {
+        "english" : "<:info:1216306156222287894> Current maps will be here soon!",
+        "spanish": "<:info:1216306156222287894> ¡Los mapas actuales estarán aquí pronto!",
+        "russian": "<:info:1216306156222287894> Текущие карты будут здесь скоро!",
+        "german": "<:info:1216306156222287894> Die aktuellen Karten werden bald hier sein!",
+        "french": "<:info:1216306156222287894> Les cartes actuelles seront bientôt ici!"
+    },
+    "noIdGiven" : {
+        "english": "Please provide an id!\nTip: use /save_id and you will never have to type it in again!",
+        "german": "Bitte geben Sie eine ID ein!\nTipp: Verwenden Sie /save_id und Sie müssen sie nie wieder eingeben!",
+        "french": "Veuillez fournir un identifiant!\nAstuce : utilisez /save_id et vous n'aurez plus jamais besoin de le saisir !",
+        "spanish": "¡Por favor, proporcione un ID!\n¡Consejo: use /save_id y nunca más tendrá que escribirlo!",
+        "russian": "Пожалуйста, укажите идентификатор!\nСовет: используйте /save_id, и вам больше никогда не придется его вводить!"
+    },
+    "invalidId" : {
+        "english": "Invalid ID: {bs_id}!",
+        "german": "Ungültige ID: {bs_id}!",
+        "french": "ID invalide: {bs_id}!",
+        "spanish": "¡ID inválido: {bs_id}!",
+        "russian": "Недопустимый идентификатор: {bs_id}!"
+    },
+    "idSaved" : {
+        "english": "ID: `{bs_id}` saved <a:verifyblack:1216302923441504287>",
+        "german": "ID: `{bs_id}` gespeichert <a:verifyblack:1216302923441504287>",
+        "french": "ID : `{bs_id}` sauvegardé <a:verifyblack:1216302923441504287>",
+        "spanish": "ID: `{bs_id}` guardado <a:verifyblack:1216302923441504287>",
+        "russian": "ID: `{bs_id}` сохранен <a:verifyblack:1216302923441504287>"
+    },
+    "helpCommand" : {
+        "title": {
+            "english": "💁 Get support!",
+            "german": "💁 Erhalte Hilfe!",
+            "spanish": "💁 ¡Obtener ayuda!",
+            "russian": "💁 Получить поддержку!",
+            "french": "💁 Obtenir de l'aide!"
+        },
+        "content" : {
+            "english" : [
+                "For help and Support, please contact the System Administrators!\n\n",
+                "<:discord:1216307276927733800> <@324607583841419276>\n",
+                "<:discord:1216307276927733800> <@818879706350092298>\n"
+            ],
+            "german": [
+                "Für Hilfe und Unterstützung wenden Sie sich bitte an die Systemadministratoren!\n\n",
+                "<:discord:1216307276927733800> <@324607583841419276>\n",
+                "<:discord:1216307276927733800> <@818879706350092298>\n"
+            ],
+            "spanish": [
+                "¡Para obtener ayuda y soporte, comuníquese con los Administradores del Sistema!\n\n",
+                "<:discord:1216307276927733800> <@324607583841419276>\n",
+                "<:discord:1216307276927733800> <@818879706350092298>\n"
+            ],
+            "russian": [
+            "Для помощи и поддержки обратитесь к системным администраторам!\n\n",
+            "<:discord:1216307276927733800> <@324607583841419276>\n",
+            "<:discord:1216307276927733800> <@818879706350092298>\n"
+            ],
+            "french": [
+            "Pour obtenir de l'aide et du support, veuillez contacter les administrateurs du système !\n\n",
+            "<:discord:1216307276927733800> <@324607583841419276>\n",
+            "<:discord:1216307276927733800> <@818879706350092298>\n"
+            ]
+        }
+    },
+    "inviteCommand" : {
+        "title": {
+            "english": "<:discord:1216307276927733800> Invite me to your Server!",
+            "german": "<:discord:1216307276927733800> Lade mich auf deinen Server ein!",
+            "french": "<:discord:1216307276927733800> Invitez-moi sur votre serveur!",
+            "spanish": "<:discord:1216307276927733800> ¡Invítame a tu servidor!",
+            "russian": "<:discord:1216307276927733800> Пригласите меня на ваш сервер!"
+        },
+        "content": {
+            "english": [
+                "<:right_arrow:1216305900961271859> Make use of free Cross Server Team Search!\n",
+                "<:right_arrow:1216305900961271859> Keep track of current and upcoming maps for free!\n",
+                "<:right_arrow:1216305900961271859> Enjoy free profile images!"
+            ],
+            "german": [
+                "<:right_arrow:1216305900961271859> Nutzen Sie die kostenlose Cross-Server-Team-Suche!\n",
+                "<:right_arrow:1216305900961271859> Behalten Sie kostenlos den Überblick über aktuelle und kommende Karten!\n",
+                "<:right_arrow:1216305900961271859> Genießen Sie kostenlose Profilbilder!"
+                ],
+            "french": [
+                "<:right_arrow:1216305900961271859> Utilisez la recherche d'équipe multi-serveurs gratuite !\n",
+                "<:right_arrow:1216305900961271859> Suivez gratuitement les cartes actuelles et à venir !\n",
+                "<:right_arrow:1216305900961271859> Profitez des images de profil gratuites !"
+            ],
+            "spanish": [
+                "<:right_arrow:1216305900961271859> ¡Utilice la búsqueda de equipos multi-servidores gratuita!\n",
+                "<:right_arrow:1216305900961271859> ¡Siga gratis los mapas actuales y futuros!\n",
+                "<:right_arrow:1216305900961271859> ¡Disfrute de las imágenes de perfil gratis!"
+            ],
+            "russian": [
+                "<:right_arrow:1216305900961271859> Воспользуйтесь бесплатным поиском команд через несколько серверов!\n",
+                "<:right_arrow:1216305900961271859> Бесплатно следите за текущими и предстоящими картами!\n",
+                "<:right_arrow:1216305900961271859> Наслаждайтесь бесплатными изображениями профиля!"
+            ]
+        }
+    },
+    "topGGLabel": {
+        "english": "Review",
+        "german": "Bewerten",
+        "french": "Évaluer",
+        "spanish": "Reseñar",
+        "russian": "Оценить"
+    },
+    "paypalLabel": {
+        "english": "Support",
+        "german": "Unterstützen",
+        "french": "Soutenir",
+        "spanish": "Apoyar",
+        "russian": "Поддержать"
+    },
+    "inviteLabel": {
+        "english": "Invite",
+        "german": "Einladen",
+        "french": "Inviter",
+        "spanish": "Invitar",
+        "russian": "Пригласить"
+    }
+    
+}

@@ -1,0 +1,37 @@
+{
+    "activeMapsTitle" : {
+        "german" : "Aktive Karten",
+        "english" : "Active Maps",
+        "french" : "Cartes actives",
+        "spanish" : "Mapas activos",
+        "russian" : "Активные карты"
+    },
+    "upcomingMapsTitle" : {
+        "german" : "Bevorstehende Karten",
+        "english" : "Upcoming Maps",
+        "french" : "Prochaines cartes",
+        "spanish" : "Próximos mapas",
+        "russian" : "Предстоящие карты"
+    },
+    "starts" : {
+        "german" : "Start:",
+        "english" : "Start:",
+        "french" : "Début:",
+        "spanish" : "Inicio:",
+        "russian" : "Начало:"
+    },
+    "ends" : {
+        "german" : "Ende:",
+        "english" : "Ends:",
+        "french" : "Fin:",
+        "spanish" : "Fin:",
+        "russian" : "Конец:"
+    },
+    "footer" : {
+        "german" : "Letztes Update: {lastUpdate} UTC\nCredits an: Brawlify.com",
+        "english" : "Last Update: {lastUpdate} UTC\nCredits to: Brawlify.com",
+        "french" : "Dernière mise à jour: {lastUpdate} UTC\nCrédits à: Brawlify.com",
+        "spanish" : "Última actualización: {lastUpdate} UTC\nCréditos a: Brawlify.com",
+        "russian" : "Последнее обновление: {lastUpdate} UTC\nАвторство: Brawlify.com"
+    }
+}

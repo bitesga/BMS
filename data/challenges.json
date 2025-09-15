@@ -1,0 +1,594 @@
+[
+  {
+      "title": {
+          "english": "Mortis No Move Challenge!",
+          "german": "Mortis Nicht bewegen Challenge",
+          "spanish": "Mortis Desafío Sin Movimiento",
+          "french": "Mortis Défi Pas de Mouvement",
+          "russian": "Mortis Вызов Не Двигаться"
+      },
+      "content": {
+          "english": "Go into a Solo Showdown round with Mortis and only move with dashes.",
+          "german": "Gehe in eine Solo-Showdown-Runde mit Mortis und bewege dich nur mit Angriffen.",
+          "spanish": "Entra en una ronda de Solo Showdown con Mortis y solo muévete con los ataques.",
+          "french": "Entrez dans une ronde de Solo Showdown avec Mortis et ne vous déplacez qu'avec les attaques.",
+          "russian": "Войдите в раунд Solo Showdown с Мортисом и двигайтесь только с помощью ударов."
+      }
+  },
+  {
+      "title": {
+      "english": "Dynamike No Move Challenge!",
+      "german": "Dynamike Nicht bewegen Challenge",
+      "spanish": "Dynamike Desafío Sin Movimiento",
+      "french": "Dynamike Défi Pas de Mouvement",
+      "russian": "Dynamike Вызов Не Двигаться"
+      },
+      "content": {
+          "english": "Go into a Solo Showdown round with Dynamike and only jump with dynamites.",
+          "german": "Gehe in eine Solo-Showdown-Runde mit Dynamike und springe nur mit Dynamiten.",
+          "spanish": "Entra en una ronda de Solo Showdown con Dynamike y solo salta con dinamitas.",
+          "french": "Entrez dans une ronde de Solo Showdown avec Dynamike et ne sautez qu'avec des dynamites.",
+          "russian": "Примите участие в раунде Solo Showdown с Dynamike и прыгайте только с динамитами."
+      }
+  },
+  {
+      "title": {
+          "english": "Random Brawler Gem Grab!",
+          "german": "Zufälliger Brawler Juwelenraub!",
+          "spanish": "¡Brawler Aleatorio en Atraco de Gemas!",
+          "french": "Brawler Aléatoire Gem Grab !",
+          "russian": "Случайный Боец Сбор Драгоценностей!"
+      },
+      "content": {
+          "english": "Play a Gem Grab round with Randoms using your 10th Brawler from the bottom.",
+          "german": "Spiele eine Runde Juwelenraub mit Randoms mit deinem 10. Brawler von unten.",
+          "spanish": "Juega una ronda de Atraco de Gemas con jugadores aleatorios usando tu décimo Brawler desde abajo.",
+          "french": "Jouez une partie de Gem Grab avec des joueurs aléatoires en utilisant votre 10ème Brawler depuis le bas.",
+          "russian": "Играйте в раунд сбора драгоценностей с случайными игроками, используя вашего 10-го бойца снизу."
+      }
+  },
+  {
+      "title": {
+          "english": "Blind Ranked Pick!",
+          "german": "Blinder Ranked-Pick!",
+          "spanish": "¡Selección a ciegas en Clasificatoria!",
+          "french": "Choix aveugle en Classé !",
+          "russian": "Слепой выбор в ранговом матче!"
+      },
+      "content": {
+          "english": "Play a round of Ranked and blind pick your brawler.",
+          "german": "Spiele eine Runde Ranked und wähle deinen Brawler blind aus.",
+          "spanish": "Juega una ronda de Clasificatoria y elige a tu brawler a ciegas.",
+          "french": "Jouez une partie classée et choisissez votre brawler à l'aveugle.",
+          "russian": "Сыграйте раунд в ранговом матче и выберите своего бойца наугад."
+      }
+  },
+  {
+      "title": {
+          "english": "Friendly 1v1",
+          "german": "Freundschaftliches 1vs1",
+          "spanish": "1v1 Amistoso",
+          "french": "1v1 Amical",
+          "russian": "Дружеский 1 на 1"
+      },
+      "content": {
+          "english": "Challenge your best Brawl Stars friend to a 1v1.",
+          "german": "Fordere deinen besten Brawl Stars Freund zu einem 1 gegen 1 heraus.",
+          "spanish": "Desafía a tu mejor amigo de Brawl Stars a un 1 contra 1.",
+          "french": "Défiez votre meilleur ami de Brawl Stars à un 1 contre 1.",
+          "russian": "Проведите дуэль 1 на 1 с вашим лучшим другом в Brawl Stars."
+      }
+  },
+  {
+      "title": {
+          "english": "Lowest Brawler",
+          "german": "Niedrigster Brawler",
+          "spanish": "Brawler con menos trofeos",
+          "french": "Brawler avec le moins de trophées",
+          "russian": "Бойц с наименьшим количеством трофеев"
+      },
+      "content": {
+          "english": "Push your lowest trophy brawler to 500 trophies.",
+          "german": "Bringe deinen Brawler mit den niedrigsten Trophäen auf 500 Trophäen.",
+          "spanish": "Lleva a tu Brawler con menos trofeos a 500 trofeos.",
+          "french": "Faites monter votre Brawler ayant le moins de trophées à 500 trophées.",
+          "russian": "Прокачайте своего бойца с наименьшим количеством трофеев до 500 трофеев."
+      }
+  },
+  {
+      "title": {
+          "english": "Lowest Brawler",
+          "german": "Niedrigster Brawler",
+          "spanish": "Brawler con menos trofeos",
+          "french": "Brawler avec le moins de trophées",
+          "russian": "Бойц с наименьшим количеством трофеев"
+      },
+      "content": {
+          "english": "Push your lowest trophy brawler to 750 trophies.",
+          "german": "Bringe deinen niedrigsten Trophäen-Brawler auf 750 Trophäen.",
+          "spanish": "Lleva a tu Brawler con menos trofeos a 750 trofeos.",
+          "french": "Faites monter votre Brawler ayant le moins de trophées à 750 trophées.",
+          "russian": "Прокачайте своего бойца с наименьшим количеством трофеев до 750 трофеев."
+      }
+  },
+  {
+      "title": {
+          "english": "Brawler Upgrade",
+          "german": "Brawler-Upgrade",
+          "spanish": "Mejora de Brawler",
+          "french": "Amélioration de Brawler",
+          "russian": "Улучшение бойца"
+      },
+      "content": {
+          "english": "Upgrade your lowest leveled brawler by 1 level.",
+          "german": "Upgrade deinen am niedrigsten gelevelten Brawler um 1 Level höher.",
+          "spanish": "Mejora tu Brawler con el nivel más bajo en 1 nivel.",
+          "french": "Améliorez votre Brawler ayant le niveau le plus bas de 1 niveau.",
+          "russian": "Повысьте уровень вашего бойца с наименьшим уровнем на 1 уровень."
+      }
+  },
+  {
+      "title": {
+          "english": "Rare Star Moment",
+          "german": "Seltener Starmoment",
+          "spanish": "Momento Estrella Raro",
+          "french": "Moment d'Étoile Rare",
+          "russian": "Редкий момент звезды"
+      },
+      "content": {
+          "english": "Become the Star Player in Brawl Ball but you must have dealt the least damage on your team.",
+          "german": "Werde der Star-Spieler in Tresorraub, aber du musst den geringsten Schaden in deinem Team verursacht haben.",
+          "spanish": "Conviértete en el Jugador Estrella en Brawl Ball pero debes haber causado el menor daño en tu equipo.",
+          "french": "Devenez le Joueur Étoile dans Brawl Ball mais vous devez avoir infligé le moins de dégâts dans votre équipe.",
+          "russian": "Станьте звездным игроком в Brawl Ball, но вы должны нанести наименьший урон в вашей команде."
+      }
+  },
+  {
+      "title": {
+          "english": "One vs. Three",
+          "german": "Allein gegen 3",
+          "spanish": "Uno contra Tres",
+          "french": "Un contre Trois",
+          "russian": "Один против Трех"
+      },
+      "content": {
+          "english": "Create a Bounty friendly game, invite 3 friends, and try to win against them.",
+          "german": "Erstelle ein Kopfgeldjagd-Testspiel, lade 3 Freunde ein und versuche, gegen sie zu gewinnen.",
+          "spanish": "Crea una partida amistosa de Recompensa, invita a 3 amigos e intenta ganarles.",
+          "french": "Créez une partie amicale de Prime, invitez 3 amis et essayez de les battre.",
+          "russian": "Создайте дружескую игру в Награду, пригласите 3 друзей и попробуйте победить их."
+      }
+  },
+  {
+      "title": {
+          "english": "Mortis No Move Challenge!",
+          "german": "Nicht bewegen Challenge",
+          "spanish": "Desafío Sin Movimiento",
+          "french": "Défi Pas de Mouvement",
+          "russian": "Вызов Не Двигаться"
+      },
+      "content": {
+          "english": "Go into a Solo Showdown round with Mortis and only move with dashes.",
+          "german": "Gehe in eine Solo-Showdown-Runde mit Mortis und bewege dich nur mit Angriffen.",
+          "spanish": "Entra en una ronda de Solo Showdown con Mortis y solo muévete con los ataques.",
+          "french": "Entrez dans une ronde de Solo Showdown avec Mortis et ne vous déplacez qu'avec les attaques.",
+          "russian": "Войдите в раунд Solo Showdown с Мортисом и двигайтесь только с помощью ударов."
+      }
+  },
+  {
+      "title": {
+          "english": "Quick Wins",
+          "german": "Schnelle Siege",
+          "spanish": "Victorias Rápidas",
+          "french": "Victoires Rapides",
+          "russian": "Быстрые Победы"
+      },
+      "content": {
+          "english": "Win 10 times in a row.",
+          "german": "Gewinne 10 Mal hintereinander.",
+          "spanish": "Gana 10 veces seguidas.",
+          "french": "Gagnez 10 fois d'affilée.",
+          "russian": "Выиграйте 10 раз подряд."
+      }
+  },
+  {
+      "title": {
+          "english": "Quick Wins",
+          "german": "Schnelle Siege",
+          "spanish": "Victorias Rápidas",
+          "french": "Victoires Rapides",
+          "russian": "Быстрые Победы"
+      },
+      "content": {
+          "english": "Win 5 times in a row with random teammates.",
+          "german": "Gewinne 5 Mal hintereinander mit Zufallsspielern.",
+          "spanish": "Gana 5 veces seguidas con compañeros aleatorios.",
+          "french": "Gagnez 5 fois d'affilée avec des coéquipiers aléatoires.",
+          "russian": "Выиграйте 5 раз подряд с случайными товарищами по команде."
+      }
+  },
+  {
+      "title": {
+          "english": "Questing",
+          "german": "Questen",
+          "spanish": "Misiones",
+          "french": "Quêtes",
+          "russian": "Выполнение квестов"
+      },
+      "content": {
+          "english": "Complete a 500-point quest.",
+          "german": "Schließe eine 500-Punkte-Quest ab.",
+          "spanish": "Completa una misión de 500 puntos.",
+          "french": "Terminez une quête de 500 points.",
+          "russian": "Завершите квест на 500 очков."
+      }
+  },
+  {
+      "title": {
+          "english": "Flawless",
+          "german": "Fehlerfrei",
+          "spanish": "Sin errores",
+          "french": "Sans erreur",
+          "russian": "Безошибочный"
+      },
+      "content": {
+          "english": "Win a Gem Grab match without dying.",
+          "german": "Gewinne eine Runde Juwelenraub, ohne zu sterben.",
+          "spanish": "Gana una partida de Atraco de Gemas sin morir.",
+          "french": "Remportez une partie de Gem Grab sans mourir.",
+          "russian": "Выиграйте матч Сбор Драгоценностей, не умирая."
+      }
+  },
+  {
+      "title": {
+          "english": "Without Pause",
+          "german": "Ohne Pause",
+          "spanish": "Sin pausa",
+          "french": "Sans pause",
+          "russian": "Без перерыва"
+      },
+      "content": {
+          "english": "Win 100 trophies while always clicking 'Play Again'.",
+          "german": "Gewinne 100 Trophäen, indem du immer auf 'Noch ein Spiel' klickst.",
+          "spanish": "Gana 100 trofeos siempre haciendo clic en 'Jugar de nuevo'.",
+          "french": "Gagnez 100 trophées en cliquant toujours sur 'Jouer encore'.",
+          "russian": "Выиграйте 100 трофеев, всегда нажимая 'Сыграть снова'."
+      }
+  },
+  {
+      "title": {
+          "english": "Mirror Reversed",
+          "german": "Spiegelverkehrt",
+          "spanish": "Espejo Invertido",
+          "french": "Inversion Miroir",
+          "russian": "Зеркально"
+      },
+      "content": {
+          "english": "Mirror your controls and try to win a Solo Showdown match.",
+          "german": "Spiegele deine Steuerung und versuche eine Solo Showdown Runde zu gewinnen.",
+          "spanish": "Refleja tus controles e intenta ganar una partida de Supervivencia en solitario.",
+          "french": "Refleter vos contrôles et essayez de gagner une partie de Survie en solo.",
+          "russian": "Отзеркальте ваши контроли и попробуйте выиграть матч одиночной выживания."
+      }
+  },
+  {
+      "title": {
+          "english": "Vertical",
+          "german": "Vertikal",
+          "spanish": "Vertical",
+          "french": "Vertical",
+          "russian": "Вертикально"
+      },
+      "content": {
+          "english": "Win a Brawl Ball match while holding your phone vertically.",
+          "german": "Gewinne eine Runde Brawlball, aber du musst dein Handy vertikal halten.",
+          "spanish": "Gana una partida de Brawl Ball mientras sostienes tu teléfono verticalmente.",
+          "french": "Gagnez une partie de Brawl Ball en tenant votre téléphone verticalement.",
+          "russian": "Выиграйте матч в Brawl Ball, удерживая ваш телефон вертикально."
+      }
+  },
+  {
+      "title": {
+          "english": "Handstand",
+          "german": "Kopfstand",
+          "spanish": "Parada de manos",
+          "french": "Pieds en l'air",
+          "russian": "Рукостой"
+      },
+      "content": {
+          "english": "Win a match with your phone upside down.",
+          "german": "Gewinne eine Runde mit deinem Handy umgedreht.",
+          "spanish": "Gana una partida con tu teléfono boca abajo.",
+          "french": "Gagnez une partie avec votre téléphone retourné.",
+          "russian": "Выиграйте матч с вашим телефоном вверх ногами."
+      }
+  },
+  {
+      "title": {
+          "english": "Auto-aim",
+          "german": "Autozielen",
+          "spanish": "Autoapuntar",
+          "french": "Auto-orientation",
+          "russian": "Авто-прицел"
+      },
+      "content": {
+          "english": "Win 3 matches but you can only use auto-aim.",
+          "german": "Gewinne 3 Runden, aber du darfst nur Auto-Zielen benutzen.",
+          "spanish": "Gana 3 partidas pero solo puedes usar el autoapuntar.",
+          "french": "Remportez 3 parties mais vous ne pouvez utiliser que l'auto-orientation.",
+          "russian": "Выиграйте 3 матча, но вы можете использовать только автоматическую цель."
+      }
+  },
+  {
+      "title": {
+          "english": "No Auto-aim",
+          "german": "Kein Autozielen",
+          "spanish": "Sin autoapuntar",
+          "french": "Pas d'auto-orientation",
+          "russian": "Без авто-прицела"
+      },
+      "content": {
+          "english": "Win 3 matches but you cannot use auto-aim.",
+          "german": "Gewinne 3 Runden, aber du darfst kein Autozielen benutzen.",
+          "spanish": "Gana 3 partidas pero no puedes usar autoapuntar.",
+          "french": "Remportez 3 parties mais vous ne pouvez pas utiliser l'auto-orientation.",
+          "russian": "Выиграйте 3 матча, но вы не можете использовать автоматическую цель."
+      }
+  },
+  {
+      "title": {
+          "english": "For the Team",
+          "german": "Für das Team",
+          "spanish": "Por el Equipo",
+          "french": "Pour l'Équipe",
+          "russian": "За Команду"
+      },
+      "content": {
+          "english": "Win a 3v3 match without any team member dying.",
+          "german": "Gewinne ein 3v3-Match, ohne dass ein Teammitglied stirbt.",
+          "spanish": "Gana una partida 3v3 sin que ningún miembro del equipo muera.",
+          "french": "Remportez une partie 3v3 sans qu'aucun membre de l'équipe ne meure.",
+          "russian": "Выиграйте матч 3v3, не давая умереть ни одному члену команды."
+      }
+  },
+  {
+      "title": {
+          "english": "Striker",
+          "german": "Stürmer",
+          "spanish": "Delantero",
+          "french": "Attaquant",
+          "russian": "Нападающий"
+      },
+      "content": {
+          "english": "Play a Brawl Ball match and score a goal within the first minute.",
+          "german": "Spiele ein Brawl Ball-Match und erziele ein Tor innerhalb der ersten Minute.",
+          "spanish": "Juega una partida de Brawl Ball y marca un gol dentro del primer minuto.",
+          "french": "Jouez une partie de Brawl Ball et marquez un but dans la première minute.",
+          "russian": "Сыграйте матч в Brawl Ball и забейте гол в течение первой минуты."
+      }
+  },
+  {
+      "title": {
+          "english": "Shopping",
+          "german": "Einkaufen",
+          "spanish": "Compras",
+          "french": "Achats",
+          "russian": "Шоппинг"
+      },
+      "content": {
+          "english": "Purchase a skin worth at least 1000 credits.",
+          "german": "Kaufe einen Skin im Wert von mindestens 1000 Credits.",
+          "spanish": "Compra una skin por un valor de al menos 1000 créditos.",
+          "french": "Achetez une skin d'une valeur d'au moins 1000 crédits.",
+          "russian": "Приобретите скин стоимостью не менее 1000 кредитов."
+      }
+  },
+  {
+      "title": {
+          "english": "You can also win with that",
+          "german": "Mit dem kann man auch gewinnen",
+          "spanish": "También se puede ganar con eso",
+          "french": "On peut aussi gagner avec ça",
+          "russian": "С этим тоже можно выиграть"
+      },
+      "content": {
+          "english": "Win 3 matches but you cannot use auto-aim.",
+          "german": "Gewinne 3 Spiele mit einem Brawler, den du selten spielst.",
+          "spanish": "Gana 3 partidas pero no puedes usar autoapuntar.",
+          "french": "Remportez 3 parties mais vous ne pouvez pas utiliser l'auto-orientation.",
+          "russian": "Выиграйте 3 матча, но вы не можете использовать автоматическую цель."
+      }
+  },
+  {
+      "title": {
+          "english": "Variety",
+          "german": "Abwechslung",
+          "spanish": "Variedad",
+          "french": "Variété",
+          "russian": "Разнообразие"
+      },
+      "content": {
+          "english": "Play 3 different modes in a row without using the same Brawler.",
+          "german": "Spiele 3 verschiedene Modi hintereinander ohne den gleichen Brawler zu verwenden.",
+          "spanish": "Juega 3 modos diferentes seguidos sin usar el mismo luchador.",
+          "french": "Jouez à 3 modes différents à la suite sans utiliser le même combattant.",
+          "russian": "Сыграйте в 3 разных режима подряд, не используя одного и того же бойца."
+      }
+  },
+  {
+      "title": {
+          "english": "Dominance",
+          "german": "Dominanz",
+          "spanish": "Dominación",
+          "french": "Dominance",
+          "russian": "Доминирование"
+      },
+      "content": {
+          "english": "Collect over 5 Power Cubes in a Solo Showdown match.",
+          "german": "Sammle über 5 Power Cubes in einem Solo-Showdown-Match.",
+          "spanish": "Recoge más de 5 Cubos de Poder en una partida de Supervivencia en solitario.",
+          "french": "Collectez plus de 5 Cubes de puissance dans une partie de Survie en solo.",
+          "russian": "Соберите более 5 кубиков силы в матче Одиночный выживание."
+      }
+  },
+  {
+      "title": {
+          "english": "Superhuman",
+          "german": "Übermensch",
+          "spanish": "Superhumano",
+          "french": "Surhomme",
+          "russian": "Сверхчеловек"
+      },
+      "content": {
+          "english": "Collect over 10 Power Cubes in a Solo Showdown match.",
+          "german": "Sammle über 10 Power Cubes in einer Runde Solo Showdown.",
+          "spanish": "Recoge más de 10 Cubos de Poder en una partida de Supervivencia en solitario.",
+          "french": "Collectez plus de 10 Cubes de puissance dans une partie de Survie en solo.",
+          "russian": "Соберите более 10 кубиков силы в матче Одиночный выживание."
+      }
+  },
+  {
+      "title": {
+          "english": "Man of the Match",
+          "german": "Spieler des Spiels",
+          "spanish": "Hombre del partido",
+          "french": "Homme du match",
+          "russian": "Человек матча"
+      },
+      "content": {
+          "english": "Win a Brawl Ball match by scoring the decisive goal.",
+          "german": "Gewinne eine Runde Brawl Ball, bei der du das entscheidende Tor erzielst.",
+          "spanish": "Gana una partida de Brawl Ball marcando el gol decisivo.",
+          "french": "Remportez une partie de Brawl Ball en marquant le but décisif.",
+          "russian": "Выиграйте матч в режиме Brawl Ball, забив решающий гол."
+      }
+  },
+  {
+      "title": {
+          "english": "New Abilities",
+          "german": "Neue Fähigkeiten",
+          "spanish": "Nuevas Habilidades",
+          "french": "Nouvelles Capacités",
+          "russian": "Новые возможности"
+      },
+      "content": {
+          "english": "Unlock 2 new gadgets for any Brawlers.",
+          "german": "Schalte 2 neue Gadgets für beliebige Brawler frei.",
+          "spanish": "Desbloquea 2 nuevos gadgets para cualquier luchador.",
+          "french": "Débloquez 2 nouveaux gadgets pour n'importe quel Brawler.",
+          "russian": "Разблокируйте 2 новых гаджета для любых бойцов."
+      }
+  },
+  {
+      "title": {
+          "english": "Stay grounded",
+          "german": "Bleib am Boden",
+          "spanish": "Mantente en tierra",
+          "french": "Rester au sol",
+          "russian": "Оставайтесь на земле"
+      },
+      "content": {
+          "english": "Win a Solo Showdown match without collecting a single Power Cube.",
+          "german": "Gewinne ein Solo-Showdown-Match, ohne einen einzigen Power Cube zu sammeln.",
+          "spanish": "Gana una partida de Supervivencia en solitario sin recoger ni un solo Cubo de Poder.",
+          "french": "Remporte une partie de Survie en solo sans collecter un seul Cube de puissance.",
+          "russian": "Выиграйте матч в режиме Одиночный выживание, не собирая ни одного кубика силы."
+      }
+  },
+  {
+      "title": {
+          "english": "At least one",
+          "german": "Immerhin einen",
+          "spanish": "Al menos uno",
+          "french": "Au moins un",
+          "russian": "По крайней мере один"
+      },
+      "content": {
+          "english": "Play 5 matches and get at least one kill in each match.",
+          "german": "Spiele 5 Spiele und erziele in jedem Spiel mindestens eine Eliminierung.",
+          "spanish": "Juega 5 partidas y consigue al menos una eliminación en cada partida.",
+          "french": "Jouez 5 parties et obtenez au moins une élimination dans chaque partie.",
+          "russian": "Сыграйте в 5 матчей и получите по крайней мере одно убийство в каждом матче."
+      }
+  },
+  {
+      "title": {
+          "english": "3 times 3",
+          "german": "3 mal 3",
+          "spanish": "3 veces 3",
+          "french": "3 fois 3",
+          "russian": "3 раза 3"
+      },
+      "content": {
+          "english": "Finish 3 Solo Showdown matches in the top 3.",
+          "german": "Schließe 3 Solo-Showdown-Runden unter den Top 3 ab.",
+          "spanish": "Termina 3 partidas de Supervivencia en solitario en el top 3.",
+          "french": "Terminez 3 parties de Survie en solo dans le top 3.",
+          "russian": "Закончите 3 матча в режиме Одиночный выживание в топ-3."
+      }
+  },
+  {
+      "title": {
+          "english": "Without a Scratch",
+          "german": "Ohne Kratzer",
+          "spanish": "Sin rasguños",
+          "french": "Sans égratignures",
+          "russian": "Без царапин"
+      },
+      "content": {
+          "english": "Win a heist match without your team's safe taking damage.",
+          "german": "Gewinne eine Runde Tresorraub, ohne dass der Tresor deines Teams Schaden nimmt.",
+          "spanish": "Gana una partida de Atraco sin que el tesoro de tu equipo reciba daño.",
+          "french": "Remportez une partie de Coffre-fort sans que le coffre de votre équipe ne subisse de dégâts.",
+          "russian": "Выиграйте матч в Сбор Драгоценностей, не дав вашему сейфу получить урон."
+      }
+  },
+  {
+      "title": {
+          "english": "15 Gems",
+          "german": "15 Juwelen",
+          "spanish": "15 Gemas",
+          "french": "15 Gemmes",
+          "russian": "15 самоцветов"
+      },
+      "content": {
+          "english": "Collect 15 gems in a Gem Grab match without dying.",
+          "german": "Sammle 15 Juwelen in einer Runde Juwelenjagd ohne zu sterben.",
+          "spanish": "Recoge 15 gemas en una partida de Atraco de Gemas sin morir.",
+          "french": "Collectez 15 gemmes dans une partie de Razzia de Gemmes sans mourir.",
+          "russian": "Соберите 15 самоцветов в матче Сбор Драгоценностей, не умирая."
+      }
+  },
+  {
+      "title": {
+          "english": "Defensive",
+          "german": "Defensiv",
+          "spanish": "Defensivo",
+          "french": "Défensif",
+          "russian": "Оборонительный"
+      },
+      "content": {
+          "english": "Win a Brawl Ball match as goalkeeper, you can only play in your own half.",
+          "german": "Gewinne eine Runde Brawlball als Torwart, du darfst nur in deiner eigenen Hälfte spielen.",
+          "spanish": "Gana una partida de Brawl Ball como portero, solo puedes jugar en tu propia mitad.",
+          "french": "Remporte une partie de Brawl Ball en tant que gardien de but, tu ne peux jouer que dans ta propre moitié.",
+          "russian": "Выиграйте матч в Brawl Ball в качестве вратаря, вы можете играть только на своей половине поля."
+      }
+  },
+  {
+      "title": {
+          "english": "Terminator",
+          "german": "Terminator",
+          "spanish": "Terminator",
+          "french": "Terminator",
+          "russian": "Терминатор"
+      },
+      "content": {
+          "english": "Win a Brawl Ball match without touching the ball.",
+          "german": "Gewinne eine Brawlball-Runde, ohne den Ball anzufassen.",
+          "spanish": "Gana una partida de Brawl Ball sin tocar el balón.",
+          "french": "Remportez une partie de Brawl Ball sans toucher le ballon.",
+          "russian": "Выиграйте матч в Brawl Ball, не касаясь мяча."
+      }
+  }
+]
