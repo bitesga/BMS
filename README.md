@@ -1,6 +1,6 @@
 # Brawl Mates System
 
-![BMS Logo](https://imgur.com/jJ6mCnT.png)
+![BMS Logo](https://imgur.com/jJ6mCnT.png](https://imgur.com/QUSZ6l1)
 
 A powerful Discord bot for Brawl Stars that helps you find teammates, manage profiles, and conquer challenges. Completely free and open-source!
 
