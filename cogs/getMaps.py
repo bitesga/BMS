@@ -9,6 +9,10 @@ format = "%d.%m.%Y, %H:%M"
 with open("languages/mapsTexts.json", "r", encoding="UTF-8") as f:
    mapsTexts = json.load(f)
 
+# ENV Daten laden
+with open("data/env.json", "r", encoding="UTF-8") as f:
+  envData = json.load(f)
+  
 class getMaps(commands.Cog):
   
   def __init__(self, bot):
@@ -18,53 +22,69 @@ class getMaps(commands.Cog):
 
   @tasks.loop(minutes=15)
   async def mapRota(self):
-    mapRota = requests.get("https://api.brawlapi.com/v1/events").json()
+    headers = {
+      "Authorization": f"Bearer {envData['BsApi']}"
+    }
+    mapRota = requests.get("https://api.brawlstars.com/v1/events/rotation", headers=headers).json()
     
     embeds = {"active" : {"german" : [], "english" : [], "french" : [], "spanish" : [], "russian" : []},
                "upcoming" : {"german" : [], "english" : [], "french" : [], "spanish" : [], "russian" : []}}
 
+    # Aktuelle Zeit für Vergleich
+    now = datetime.datetime.now(datetime.timezone.utc)
+
+    # Events nach active und upcoming trennen
+    activeEvents = []
+    upcomingEvents = []
+    
+    for event in mapRota:
+      startTime = datetime.datetime.strptime(event["startTime"], "%Y%m%dT%H%M%S.%fZ").replace(tzinfo=datetime.timezone.utc)
+      endTime = datetime.datetime.strptime(event["endTime"], "%Y%m%dT%H%M%S.%fZ").replace(tzinfo=datetime.timezone.utc)
+      
+      if startTime <= now < endTime:
+        activeEvents.append(event)
+      elif startTime > now:
+        upcomingEvents.append(event)
+
+    # Active Maps
     for language in embeds["active"]:
-      for event in mapRota["active"]:
-        if event["slot"]["name"] == "Challenge":
+      for event in activeEvents:
+        # Solo Showdown überspringen
+        if event["event"]["mode"] == "soloShowdown":
           continue
-        if event["map"]["gameMode"]["name"] == "Solo Showdown":
-          continue
-        if event["map"]["gameMode"]["name"] == "Duo Showdown":
-          eventName = "Showdown"
-        else:
-          eventName = event["map"]["gameMode"]["name"]
-        embed=discord.Embed(title=event["map"]["name"], description=eventName)
-        endDate = datetime.datetime.fromisoformat(event["endTime"].replace("Z", "+00:00"))
-        embed.description += f'\n{mapsTexts["ends"][language]} {endDate.strftime(format)} UTC'
-        embed.set_image(url=event["map"]["imageUrl"])
-        embed.set_thumbnail(url=event["map"]["gameMode"]["imageUrl"])
+        
+        # Mode Name formatieren
+        eventName = event["event"]["mode"]
+        
+        embed = discord.Embed(title=event["event"]["map"], description=eventName)
+        endTime = datetime.datetime.strptime(event["endTime"], "%Y%m%dT%H%M%S.%fZ").replace(tzinfo=datetime.timezone.utc)
+        embed.description += f'\n{mapsTexts["ends"][language]} {endTime.strftime(format)} UTC'
         embeds["active"][language].append(embed)
         if len(embeds["active"][language]) == 10:
           break
       
-      embed.set_footer(text=mapsTexts["footer"][language].format(lastUpdate=datetime.datetime.now().strftime(format)))
+      if embeds["active"][language]:
+        embeds["active"][language][-1].set_footer(text=mapsTexts["footer"][language].format(lastUpdate=datetime.datetime.now().strftime(format)))
 
-
+    # Upcoming Maps
     for language in embeds["upcoming"]:
-      for event in mapRota["upcoming"]:
-        if event["slot"]["name"] == "Challenge":
+      for event in upcomingEvents:
+        # Solo Showdown überspringen
+        if event["event"]["mode"] == "soloShowdown":
           continue
-        if event["map"]["gameMode"]["name"] == "Solo Showdown":
-          continue
-        if event["map"]["gameMode"]["name"] == "Duo Showdown":
-          eventName = "Showdown"
-        else:
-          eventName = event["map"]["gameMode"]["name"]
-        embed=discord.Embed(title=event["map"]["name"], description=eventName)
-        startDate = datetime.datetime.fromisoformat(event["startTime"].replace("Z", "+00:00"))
-        embed.description += f'\n{mapsTexts["starts"][language]} {startDate.strftime(format)} UTC'
-        embed.set_image(url=event["map"]["imageUrl"])
-        embed.set_thumbnail(url=event["map"]["gameMode"]["imageUrl"])
+        
+        # Mode Name formatieren
+        eventName = event["event"]["mode"]
+        
+        embed = discord.Embed(title=event["event"]["map"], description=eventName)
+        startTime = datetime.datetime.strptime(event["startTime"], "%Y%m%dT%H%M%S.%fZ").replace(tzinfo=datetime.timezone.utc)
+        embed.description += f'\n{mapsTexts["starts"][language]} {startTime.strftime(format)} UTC'
         embeds["upcoming"][language].append(embed)
         if len(embeds["upcoming"][language]) == 10:
           break
 
-      embed.set_footer(text=mapsTexts["footer"][language].format(lastUpdate=datetime.datetime.now().strftime(format)))
+      if embeds["upcoming"][language]:
+        embeds["upcoming"][language][-1].set_footer(text=mapsTexts["footer"][language].format(lastUpdate=datetime.datetime.now().strftime(format)))
 
 
     for guild in self.bot.guilds:
