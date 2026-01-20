@@ -20,6 +20,17 @@ class getMaps(commands.Cog):
     self.mapRota.start()
 
 
+  def format_mode_name(self, mode):
+    """Formatiert camelCase Mode Namen zu Title Case mit Leerzeichen"""
+    # Füge Leerzeichen vor Großbuchstaben ein
+    formatted = ""
+    for i, char in enumerate(mode):
+      if i > 0 and char.isupper():
+        formatted += " "
+      formatted += char
+    # Erste Buchstabe groß, Rest wie es ist
+    return formatted[0].upper() + formatted[1:]
+
   @tasks.loop(minutes=15)
   async def mapRota(self):
     headers = {
@@ -54,17 +65,24 @@ class getMaps(commands.Cog):
           continue
         
         # Mode Name formatieren
-        eventName = event["event"]["mode"]
+        eventName = self.format_mode_name(event["event"]["mode"])
         
         embed = discord.Embed(title=event["event"]["map"], description=eventName)
         endTime = datetime.datetime.strptime(event["endTime"], "%Y%m%dT%H%M%S.%fZ").replace(tzinfo=datetime.timezone.utc)
-        embed.description += f'\n{mapsTexts["ends"][language]} {endTime.strftime(format)} UTC'
+        
+        # Verbleibende Zeit berechnen
+        timeLeft = endTime - now
+        hoursLeft = int(timeLeft.total_seconds() / 3600)
+        minutesLeft = int((timeLeft.total_seconds() % 3600) / 60)
+        
+        if hoursLeft > 0:
+          embed.description += f'\n{mapsTexts["ends"][language]} {hoursLeft}h {minutesLeft}m'
+        else:
+          embed.description += f'\n{mapsTexts["ends"][language]} {minutesLeft}m'
+        
         embeds["active"][language].append(embed)
         if len(embeds["active"][language]) == 10:
           break
-      
-      if embeds["active"][language]:
-        embeds["active"][language][-1].set_footer(text=mapsTexts["footer"][language].format(lastUpdate=datetime.datetime.now().strftime(format)))
 
     # Upcoming Maps
     for language in embeds["upcoming"]:
@@ -74,17 +92,24 @@ class getMaps(commands.Cog):
           continue
         
         # Mode Name formatieren
-        eventName = event["event"]["mode"]
+        eventName = self.format_mode_name(event["event"]["mode"])
         
         embed = discord.Embed(title=event["event"]["map"], description=eventName)
         startTime = datetime.datetime.strptime(event["startTime"], "%Y%m%dT%H%M%S.%fZ").replace(tzinfo=datetime.timezone.utc)
-        embed.description += f'\n{mapsTexts["starts"][language]} {startTime.strftime(format)} UTC'
+        
+        # Zeit bis Start berechnen
+        timeUntil = startTime - now
+        hoursUntil = int(timeUntil.total_seconds() / 3600)
+        minutesUntil = int((timeUntil.total_seconds() % 3600) / 60)
+        
+        if hoursUntil > 0:
+          embed.description += f'\n{mapsTexts["starts"][language]} {hoursUntil}h {minutesUntil}m'
+        else:
+          embed.description += f'\n{mapsTexts["starts"][language]} {minutesUntil}m'
+        
         embeds["upcoming"][language].append(embed)
         if len(embeds["upcoming"][language]) == 10:
           break
-
-      if embeds["upcoming"][language]:
-        embeds["upcoming"][language][-1].set_footer(text=mapsTexts["footer"][language].format(lastUpdate=datetime.datetime.now().strftime(format)))
 
 
     for guild in self.bot.guilds:
