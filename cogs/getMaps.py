@@ -33,7 +33,10 @@ class getMaps(commands.Cog):
 
   @tasks.loop(minutes=15)
   async def mapRota(self):
-    mapRota = requests.get("https://api.brawlify.com/v1/events").json()["active"]
+    headers = {
+      "Authorization": f"Bearer {envData['BsApi']}"
+    }
+    mapRota = requests.get("https://api.brawlstars.com/v1/events/rotation", headers=headers).json()
     
     embeds = {"active" : {"german" : [], "english" : [], "french" : [], "spanish" : [], "russian" : []},
                "upcoming" : {"german" : [], "english" : [], "french" : [], "spanish" : [], "russian" : []}}
@@ -46,8 +49,8 @@ class getMaps(commands.Cog):
     upcomingEvents = []
     
     for event in mapRota:
-      startTime = datetime.datetime.fromisoformat(event["startTime"].replace("Z", "+00:00"))
-      endTime = datetime.datetime.fromisoformat(event["endTime"].replace("Z", "+00:00"))
+      startTime = datetime.datetime.strptime(event["startTime"], "%Y%m%dT%H%M%S.%fZ").replace(tzinfo=datetime.timezone.utc)
+      endTime = datetime.datetime.strptime(event["endTime"], "%Y%m%dT%H%M%S.%fZ").replace(tzinfo=datetime.timezone.utc)
       
       if startTime <= now < endTime:
         activeEvents.append(event)
@@ -58,14 +61,14 @@ class getMaps(commands.Cog):
     for language in embeds["active"]:
       for event in activeEvents:
         # Solo Showdown überspringen
-        if event["map"]["gameMode"]["hash"] == "solo-showdown":
+        if event["event"]["mode"] == "soloShowdown":
           continue
         
-        # Mode Name verwenden (schon formatiert von API)
-        eventName = event["map"]["gameMode"]["name"]
+        # Mode Name formatieren
+        eventName = self.format_mode_name(event["event"]["mode"])
         
-        embed = discord.Embed(title=event["map"]["name"], description=eventName)
-        endTime = datetime.datetime.fromisoformat(event["endTime"].replace("Z", "+00:00"))
+        embed = discord.Embed(title=event["event"]["map"], description=eventName)
+        endTime = datetime.datetime.strptime(event["endTime"], "%Y%m%dT%H%M%S.%fZ").replace(tzinfo=datetime.timezone.utc)
         
         # Verbleibende Zeit berechnen
         timeLeft = endTime - now
@@ -76,12 +79,6 @@ class getMaps(commands.Cog):
           embed.description += f'\n{mapsTexts["ends"][language]} {hoursLeft}h {minutesLeft}m'
         else:
           embed.description += f'\n{mapsTexts["ends"][language]} {minutesLeft}m'
-        
-        # Set image (Map) und thumbnail (Environment/Game Mode)
-        if event["map"].get("imageUrl"):
-          embed.set_image(url=event["map"]["imageUrl"])
-        if event["map"].get("environment") and event["map"]["environment"].get("imageUrl"):
-          embed.set_thumbnail(url=event["map"]["environment"]["imageUrl"])
         
         embeds["active"][language].append(embed)
         if len(embeds["active"][language]) == 10:
@@ -96,14 +93,14 @@ class getMaps(commands.Cog):
       else:
         for event in upcomingEvents:
           # Solo Showdown überspringen
-          if event["map"]["gameMode"]["hash"] == "solo-showdown":
+          if event["event"]["mode"] == "soloShowdown":
             continue
           
-          # Mode Name verwenden (schon formatiert von API)
-          eventName = event["map"]["gameMode"]["name"]
+          # Mode Name formatieren
+          eventName = self.format_mode_name(event["event"]["mode"])
           
-          embed = discord.Embed(title=event["map"]["name"], description=eventName)
-          startTime = datetime.datetime.fromisoformat(event["startTime"].replace("Z", "+00:00"))
+          embed = discord.Embed(title=event["event"]["map"], description=eventName)
+          startTime = datetime.datetime.strptime(event["startTime"], "%Y%m%dT%H%M%S.%fZ").replace(tzinfo=datetime.timezone.utc)
           
           # Zeit bis Start berechnen
           timeUntil = startTime - now
@@ -114,12 +111,6 @@ class getMaps(commands.Cog):
             embed.description += f'\n{mapsTexts["starts"][language]} {hoursUntil}h {minutesUntil}m'
           else:
             embed.description += f'\n{mapsTexts["starts"][language]} {minutesUntil}m'
-          
-          # Set image (Map) und thumbnail (Environment/Game Mode)
-          if event["map"].get("imageUrl"):
-            embed.set_image(url=event["map"]["imageUrl"])
-          if event["map"].get("environment") and event["map"]["environment"].get("imageUrl"):
-            embed.set_thumbnail(url=event["map"]["environment"]["imageUrl"])
           
           embeds["upcoming"][language].append(embed)
           if len(embeds["upcoming"][language]) == 10:
