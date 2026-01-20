@@ -33,10 +33,7 @@ class getMaps(commands.Cog):
 
   @tasks.loop(minutes=15)
   async def mapRota(self):
-    headers = {
-      "Authorization": f"Bearer {envData['BsApi']}"
-    }
-    mapRota = requests.get("https://api.brawlstars.com/v1/events/rotation", headers=headers).json()
+    mapRota = requests.get("https://api.brawlify.com/v1/events").json()["active"]
     
     embeds = {"active" : {"german" : [], "english" : [], "french" : [], "spanish" : [], "russian" : []},
                "upcoming" : {"german" : [], "english" : [], "french" : [], "spanish" : [], "russian" : []}}
@@ -61,13 +58,13 @@ class getMaps(commands.Cog):
     for language in embeds["active"]:
       for event in activeEvents:
         # Solo Showdown überspringen
-        if event["event"]["mode"] == "soloShowdown":
+        if event.get("mode") == "soloShowdown":
           continue
         
         # Mode Name formatieren
-        eventName = self.format_mode_name(event["event"]["mode"])
+        eventName = self.format_mode_name(event.get("mode", "Unknown"))
         
-        embed = discord.Embed(title=event["event"]["map"], description=eventName)
+        embed = discord.Embed(title=event.get("map", "Unknown Map"), description=eventName)
         endTime = datetime.datetime.strptime(event["endTime"], "%Y%m%dT%H%M%S.%fZ").replace(tzinfo=datetime.timezone.utc)
         
         # Verbleibende Zeit berechnen
@@ -80,36 +77,53 @@ class getMaps(commands.Cog):
         else:
           embed.description += f'\n{mapsTexts["ends"][language]} {minutesLeft}m'
         
+        # Set image (Map) und thumbnail (Environment/Game Mode)
+        if event.get("map").get("imageUrl"):
+          embed.set_image(url=event["map"]["imageUrl"])
+        if event.get("map").get("environment") and event["map"]["environment"].get("imageUrl"):
+          embed.set_thumbnail(url=event["map"]["environment"]["imageUrl"])
+        
         embeds["active"][language].append(embed)
         if len(embeds["active"][language]) == 10:
           break
 
     # Upcoming Maps
     for language in embeds["upcoming"]:
-      for event in upcomingEvents:
-        # Solo Showdown überspringen
-        if event["event"]["mode"] == "soloShowdown":
-          continue
-        
-        # Mode Name formatieren
-        eventName = self.format_mode_name(event["event"]["mode"])
-        
-        embed = discord.Embed(title=event["event"]["map"], description=eventName)
-        startTime = datetime.datetime.strptime(event["startTime"], "%Y%m%dT%H%M%S.%fZ").replace(tzinfo=datetime.timezone.utc)
-        
-        # Zeit bis Start berechnen
-        timeUntil = startTime - now
-        hoursUntil = int(timeUntil.total_seconds() / 3600)
-        minutesUntil = int((timeUntil.total_seconds() % 3600) / 60)
-        
-        if hoursUntil > 0:
-          embed.description += f'\n{mapsTexts["starts"][language]} {hoursUntil}h {minutesUntil}m'
-        else:
-          embed.description += f'\n{mapsTexts["starts"][language]} {minutesUntil}m'
-        
+      if not upcomingEvents:
+        # Leeres Embed wenn keine upcoming Events
+        embed = discord.Embed(title="No Upcoming Data", description="There are currently no upcoming events available.")
         embeds["upcoming"][language].append(embed)
-        if len(embeds["upcoming"][language]) == 10:
-          break
+      else:
+        for event in upcomingEvents:
+          # Solo Showdown überspringen
+          if event.get("mode") == "soloShowdown":
+            continue
+          
+          # Mode Name formatieren
+          eventName = self.format_mode_name(event.get("mode", "Unknown"))
+          
+          embed = discord.Embed(title=event.get("map", "Unknown Map"), description=eventName)
+          startTime = datetime.datetime.strptime(event["startTime"], "%Y%m%dT%H%M%S.%fZ").replace(tzinfo=datetime.timezone.utc)
+          
+          # Zeit bis Start berechnen
+          timeUntil = startTime - now
+          hoursUntil = int(timeUntil.total_seconds() / 3600)
+          minutesUntil = int((timeUntil.total_seconds() % 3600) / 60)
+          
+          if hoursUntil > 0:
+            embed.description += f'\n{mapsTexts["starts"][language]} {hoursUntil}h {minutesUntil}m'
+          else:
+            embed.description += f'\n{mapsTexts["starts"][language]} {minutesUntil}m'
+          
+          # Set image (Map) und thumbnail (Environment/Game Mode)
+          if event.get("map").get("imageUrl"):
+            embed.set_image(url=event["map"]["imageUrl"])
+          if event.get("map").get("environment") and event["map"]["environment"].get("imageUrl"):
+            embed.set_thumbnail(url=event["map"]["environment"]["imageUrl"])
+          
+          embeds["upcoming"][language].append(embed)
+          if len(embeds["upcoming"][language]) == 10:
+            break
 
 
     for guild in self.bot.guilds:
