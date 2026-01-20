@@ -31,12 +31,25 @@ class getMaps(commands.Cog):
     # Erste Buchstabe groß, Rest wie es ist
     return formatted[0].upper() + formatted[1:]
 
+  def simplify_name(self, name):
+    """Vereinfacht einen Namen für Vergleiche (Kleinbuchstaben, Bindestriche zu Leerzeichen)"""
+    return name.lower().replace("-", " ").strip()
+
   @tasks.loop(minutes=15)
   async def mapRota(self):
     headers = {
       "Authorization": f"Bearer {envData['BsApi']}"
     }
     mapRota = requests.get("https://api.brawlstars.com/v1/events/rotation", headers=headers).json()
+    
+    # Lade Brawlify Maps für Bilder
+    brawlifyMaps = {}
+    try:
+      brawlifyData = requests.get("https://api.brawlify.com/v1/maps").json()
+      for mapData in brawlifyData.get("list", []):
+        brawlifyMaps[self.simplify_name(mapData["name"])] = mapData
+    except:
+      pass
     
     embeds = {"active" : {"german" : [], "english" : [], "french" : [], "spanish" : [], "russian" : []},
                "upcoming" : {"german" : [], "english" : [], "french" : [], "spanish" : [], "russian" : []}}
@@ -66,8 +79,10 @@ class getMaps(commands.Cog):
         
         # Mode Name formatieren
         eventName = self.format_mode_name(event["event"]["mode"])
+        mapName = event["event"]["map"]
+        simplifiedMapName = self.simplify_name(mapName)
         
-        embed = discord.Embed(title=event["event"]["map"], description=eventName)
+        embed = discord.Embed(title=mapName, description=eventName)
         endTime = datetime.datetime.strptime(event["endTime"], "%Y%m%dT%H%M%S.%fZ").replace(tzinfo=datetime.timezone.utc)
         
         # Verbleibende Zeit berechnen
@@ -79,6 +94,14 @@ class getMaps(commands.Cog):
           embed.description += f'\n{mapsTexts["ends"][language]} {hoursLeft}h {minutesLeft}m'
         else:
           embed.description += f'\n{mapsTexts["ends"][language]} {minutesLeft}m'
+        
+        # Setze Bilder aus Brawlify
+        if simplifiedMapName in brawlifyMaps:
+          brawlifyMap = brawlifyMaps[simplifiedMapName]
+          if brawlifyMap.get("imageUrl"):
+            embed.set_image(url=brawlifyMap["imageUrl"])
+          if brawlifyMap.get("environment") and brawlifyMap["environment"].get("imageUrl"):
+            embed.set_thumbnail(url=brawlifyMap["environment"]["imageUrl"])
         
         embeds["active"][language].append(embed)
         if len(embeds["active"][language]) == 10:
@@ -98,8 +121,10 @@ class getMaps(commands.Cog):
           
           # Mode Name formatieren
           eventName = self.format_mode_name(event["event"]["mode"])
+          mapName = event["event"]["map"]
+          simplifiedMapName = self.simplify_name(mapName)
           
-          embed = discord.Embed(title=event["event"]["map"], description=eventName)
+          embed = discord.Embed(title=mapName, description=eventName)
           startTime = datetime.datetime.strptime(event["startTime"], "%Y%m%dT%H%M%S.%fZ").replace(tzinfo=datetime.timezone.utc)
           
           # Zeit bis Start berechnen
@@ -111,6 +136,14 @@ class getMaps(commands.Cog):
             embed.description += f'\n{mapsTexts["starts"][language]} {hoursUntil}h {minutesUntil}m'
           else:
             embed.description += f'\n{mapsTexts["starts"][language]} {minutesUntil}m'
+          
+          # Setze Bilder aus Brawlify
+          if simplifiedMapName in brawlifyMaps:
+            brawlifyMap = brawlifyMaps[simplifiedMapName]
+            if brawlifyMap.get("imageUrl"):
+              embed.set_image(url=brawlifyMap["imageUrl"])
+            if brawlifyMap.get("environment") and brawlifyMap["environment"].get("imageUrl"):
+              embed.set_thumbnail(url=brawlifyMap["environment"]["imageUrl"])
           
           embeds["upcoming"][language].append(embed)
           if len(embeds["upcoming"][language]) == 10:
