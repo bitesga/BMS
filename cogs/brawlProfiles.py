@@ -95,6 +95,46 @@ class brawlProfiles(commands.Cog):
       return await interaction.response.send_message(f"Unknown error: {error}", delete_after=5, ephemeral=True)
     
     
+  # Get your Profile Ranks Image
+  @app_commands.command(description="get your bs profile's brawler ranks")
+  async def brawl_ranks(self, interaction: discord.Interaction, bs_id: str=None):
+      # Ausgewählte Sprache fetchen
+      options = mongodb.findGuildOptions(interaction.guild.id)
+      language = options["language"]
+
+      # Nutzer Id fetchen
+      user_options = mongodb.findUserOptions(interaction.user.id)
+      if not bs_id:
+        bs_id = user_options["bs_id"]
+
+      if not bs_id:
+        return await interaction.response.send_message(generalTexts["noIdGiven"][language], ephemeral=True, delete_after=60)
+
+
+      await interaction.response.defer()
+      profileImg, bs_id, player_name, BsMaintenance, imgMaintenance = getBsProfile(bs_id, "https://brawltracker.com/_next/image?url=%2Fapi%2Fimage%2Frank%2F", "&w=1920&q=75")
+      if BsMaintenance:
+        embed = discord.Embed(title="Brawl Stars API in Maintenance", description=f"Please try again later", color=int("000000", 16))
+        return await interaction.edit_original_response(content="", embed=embed)
+      elif imgMaintenance:
+        embed = discord.Embed(title="Brawl Bot Image Service in Maintenance", description=f"Please try again later", color=int("000000", 16))
+        return await interaction.edit_original_response(content="", embed=embed)
+      if not (profileImg and player_name):
+        embed = discord.Embed(title=player_name, description=f"### <:info:1216306156222287894> ID: #{bs_id}", color=int("000000", 16))
+        await interaction.edit_original_response(content="", attachments=[discord.File("playerNotFound.webp", filename="playerNotFound.webp")], embed=embed)
+      else:
+        viewItems = [LinkButton("Brawlify", "https://brawlify.com/stats/profile/"+bs_id, "<:brawlify:1226211333540941844>")]
+        embed = discord.Embed(title=player_name, description=f"### <:info:1216306156222287894> ID: #{bs_id}", color=int("000000", 16))
+        await interaction.edit_original_response(content="", attachments=[discord.File(profileImg, filename="profile_image.png")], embed=embed, view=View(viewItems))
+
+  @brawl_ranks.error
+  async def brawl_ranks_error(self, interaction: discord.Interaction, error: app_commands.AppCommandError):
+    if isinstance(error, app_commands.NoPrivateMessage):
+      return await interaction.response.send_message("Command can't be run in Private Messages.", delete_after=5, ephemeral=True)
+    else:
+      return await interaction.response.send_message(f"Unknown error: {error}", delete_after=5, ephemeral=True)
+    
+    
   # Save your Id
   @app_commands.command(description="save your id (#) for result tracking")
   async def save_id(self, interaction: discord.Interaction, bs_id: str):
