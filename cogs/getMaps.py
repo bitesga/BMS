@@ -82,7 +82,7 @@ class getMaps(commands.Cog):
         mapName = event["event"]["map"]
         simplifiedMapName = self.simplify_name(mapName)
         
-        embed = discord.Embed(title=mapName, description=eventName)
+        embed = discord.Embed(title=mapName, description="")
         endTime = datetime.datetime.strptime(event["endTime"], "%Y%m%dT%H%M%S.%fZ").replace(tzinfo=datetime.timezone.utc)
         
         # Verbleibende Zeit berechnen
@@ -91,17 +91,17 @@ class getMaps(commands.Cog):
         minutesLeft = int((timeLeft.total_seconds() % 3600) / 60)
         
         if hoursLeft > 0:
-          embed.description += f'\n{mapsTexts["ends"][language]} {hoursLeft}h {minutesLeft}m'
+          embed.description = f'{mapsTexts["ends"][language]} {hoursLeft}h {minutesLeft}m'
         else:
-          embed.description += f'\n{mapsTexts["ends"][language]} {minutesLeft}m'
+          embed.description = f'{mapsTexts["ends"][language]} {minutesLeft}m'
         
         # Setze Bilder aus Brawlify
         if simplifiedMapName in brawlifyMaps:
           brawlifyMap = brawlifyMaps[simplifiedMapName]
           if brawlifyMap.get("imageUrl"):
             embed.set_image(url=brawlifyMap["imageUrl"])
-          if brawlifyMap.get("environment") and brawlifyMap["environment"].get("imageUrl"):
-            embed.set_thumbnail(url=brawlifyMap["environment"]["imageUrl"])
+        
+        embed.set_footer(text=f'Last updated: {now.strftime("%d.%m.%Y, %H:%M UTC")}')
         
         embeds["active"][language].append(embed)
         if len(embeds["active"][language]) == 10:
@@ -124,7 +124,7 @@ class getMaps(commands.Cog):
           mapName = event["event"]["map"]
           simplifiedMapName = self.simplify_name(mapName)
           
-          embed = discord.Embed(title=mapName, description=eventName)
+          embed = discord.Embed(title=mapName, description="")
           startTime = datetime.datetime.strptime(event["startTime"], "%Y%m%dT%H%M%S.%fZ").replace(tzinfo=datetime.timezone.utc)
           
           # Zeit bis Start berechnen
@@ -133,17 +133,17 @@ class getMaps(commands.Cog):
           minutesUntil = int((timeUntil.total_seconds() % 3600) / 60)
           
           if hoursUntil > 0:
-            embed.description += f'\n{mapsTexts["starts"][language]} {hoursUntil}h {minutesUntil}m'
+            embed.description = f'{mapsTexts["starts"][language]} {hoursUntil}h {minutesUntil}m'
           else:
-            embed.description += f'\n{mapsTexts["starts"][language]} {minutesUntil}m'
+            embed.description = f'{mapsTexts["starts"][language]} {minutesUntil}m'
           
           # Setze Bilder aus Brawlify
           if simplifiedMapName in brawlifyMaps:
             brawlifyMap = brawlifyMaps[simplifiedMapName]
             if brawlifyMap.get("imageUrl"):
               embed.set_image(url=brawlifyMap["imageUrl"])
-            if brawlifyMap.get("environment") and brawlifyMap["environment"].get("imageUrl"):
-              embed.set_thumbnail(url=brawlifyMap["environment"]["imageUrl"])
+          
+          embed.set_footer(text=f'Last updated: {now.strftime("%d.%m.%Y, %H:%M UTC")}')
           
           embeds["upcoming"][language].append(embed)
           if len(embeds["upcoming"][language]) == 10:
