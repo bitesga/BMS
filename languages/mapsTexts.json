@@ -21,11 +21,11 @@
         "russian" : "Начало:"
     },
     "ends" : {
-        "german" : "Ende:",
-        "english" : "Ends:",
-        "french" : "Fin:",
-        "spanish" : "Fin:",
-        "russian" : "Конец:"
+        "german" : "Endet in:",
+        "english" : "Ends in:",
+        "french" : "Se termine dans:",
+        "spanish" : "Termina en:",
+        "russian" : "Заканчивается через:"
     },
     "footer" : {
         "german" : "Letztes Update: {lastUpdate} UTC\nCredits an: Brawlify.com",
