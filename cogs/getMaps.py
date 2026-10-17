@@ -35,12 +35,35 @@ class getMaps(commands.Cog):
     """Vereinfacht einen Namen für Vergleiche (Kleinbuchstaben, Bindestriche zu Leerzeichen)"""
     return name.lower().replace("-", " ").strip()
 
+  def parse_event_time(self, value):
+    """Parst die UTC-Zeitstempel der Brawl Stars Events."""
+    if not isinstance(value, str):
+      raise ValueError(f"Invalid event timestamp: {value!r}")
+
+    timestamp = value[:-1] if value.endswith("Z") else value
+    timestampFormat = "%Y%m%dT%H%M%S.%f" if "." in timestamp else "%Y%m%dT%H%M%S"
+    return datetime.datetime.strptime(timestamp, timestampFormat).replace(
+      tzinfo=datetime.timezone.utc
+    )
+
   @tasks.loop(minutes=15)
   async def mapRota(self):
     headers = {
       "Authorization": f"Bearer {envData['BsApi']}"
     }
-    mapRota = requests.get("https://api.brawlstars.com/v1/events/rotation", headers=headers).json()
+    try:
+      rotationResponse = requests.get(
+        "https://api.brawlstars.com/v1/events/rotation",
+        headers=headers,
+        timeout=10
+      )
+      rotationResponse.raise_for_status()
+      mapRota = rotationResponse.json()
+      if not isinstance(mapRota, list):
+        raise ValueError("Rotation response is not a list")
+    except (requests.RequestException, ValueError) as error:
+      print(f"Could not load Brawl Stars event rotation: {error}")
+      return
     
     # Lade Brawlify Maps für Bilder
     brawlifyMaps = {}
@@ -62,13 +85,20 @@ class getMaps(commands.Cog):
     upcomingEvents = []
     
     for event in mapRota:
-      startTime = datetime.datetime.strptime(event["startTime"], "%Y%m%dT%H%M%S.%fZ").replace(tzinfo=datetime.timezone.utc)
-      endTime = datetime.datetime.strptime(event["endTime"], "%Y%m%dT%H%M%S.%fZ").replace(tzinfo=datetime.timezone.utc)
+      try:
+        startTime = self.parse_event_time(event["startTime"])
+        endTime = self.parse_event_time(event["endTime"])
+      except (KeyError, TypeError, ValueError) as error:
+        print(f"Skipping invalid rotation event: {error}")
+        continue
       
       if startTime <= now < endTime:
         activeEvents.append(event)
       elif startTime > now:
         upcomingEvents.append(event)
+
+    activeEvents.sort(key=lambda event: event.get("slotId", 0))
+    upcomingEvents.sort(key=lambda event: event["startTime"])
 
     # Active Maps
     for language in embeds["active"]:
@@ -78,12 +108,11 @@ class getMaps(commands.Cog):
           continue
         
         # Mode Name formatieren
-        eventName = self.format_mode_name(event["event"]["mode"])
         mapName = event["event"]["map"]
         simplifiedMapName = self.simplify_name(mapName)
         
         embed = discord.Embed(title=mapName, description="")
-        endTime = datetime.datetime.strptime(event["endTime"], "%Y%m%dT%H%M%S.%fZ").replace(tzinfo=datetime.timezone.utc)
+        endTime = self.parse_event_time(event["endTime"])
         
         # Verbleibende Zeit berechnen
         timeLeft = endTime - now
@@ -120,12 +149,11 @@ class getMaps(commands.Cog):
             continue
           
           # Mode Name formatieren
-          eventName = self.format_mode_name(event["event"]["mode"])
           mapName = event["event"]["map"]
           simplifiedMapName = self.simplify_name(mapName)
           
           embed = discord.Embed(title=mapName, description="")
-          startTime = datetime.datetime.strptime(event["startTime"], "%Y%m%dT%H%M%S.%fZ").replace(tzinfo=datetime.timezone.utc)
+          startTime = self.parse_event_time(event["startTime"])
           
           # Zeit bis Start berechnen
           timeUntil = startTime - now
